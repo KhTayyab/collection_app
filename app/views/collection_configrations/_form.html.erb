@@ -1,0 +1,48 @@
+<%= form_for(collection_configration) do |f| %>
+  <% if collection_configration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collection_configration.errors.count, "error") %> prohibited this collection_configration from being saved:</h2>
+
+      <ul>
+      <% collection_configration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-sm-12">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :collection_name, "Collection Name" %>
+        <%= f.text_field :collection_name, :class => 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12" style="display:none;">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :shop_name %>
+        <%= f.text_field :shop_name, :class => 'form-control', :value => params[:shop]  %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :avatar, "Collection Banner" %>
+        <%= f.file_field :avatar %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.submit :class => "btn btn-primary", :value => "Upload Banner" %>
+      </div>
+    </div>
+  </div>
+<% end %>

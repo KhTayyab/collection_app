@@ -1,0 +1,10 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+     ShopifyApp.ready(function(){
+       ShopifyApp.Bar.initialize({ title: "Edit" });
+     });
+  </script>
+<% end %>
+<h2 class="text-center">Edit Collection Banner</h2>
+
+<%= render 'form', collection_configration: @collection_configration %>

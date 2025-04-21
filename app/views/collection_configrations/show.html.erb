@@ -1,0 +1,21 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+     ShopifyApp.ready(function(){
+       ShopifyApp.Bar.initialize({ title: "Show" });
+     });
+  </script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Collection Name:</strong>
+  <%= @collection_configration.collection_name %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @collection_configration.avatar %>
+</p>
+
+<%= link_to 'Edit', edit_collection_configration_path(@collection_configration) %> |
+<%= link_to 'Back', collection_configrations_path %>
